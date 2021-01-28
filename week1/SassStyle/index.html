@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- include bs -->
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     -->
+    <title>bootstrap</title>
+</head>
+<body>
+
+  <!-- navbar -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+      <a href="#" class="navbar-brand">Devs</a>
+      <button class="navbar-toggler" data-toggle='collapse' data-target='#navbarList'>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarList">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link">User</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">non-User</a>
+          </li>
+        </ul>
+      </div>
+    </nav>  
+  <!-- navbar -->
+
+  <!-- Alert -->
+  <h2>Alert</h2>
+  <!-- add button for exit alert -->
+    
+  <!-- btn  -->
+    <div class="alert alert-danger fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="false"> &times; </span>
+      </button>
+      <h2 class="alert-heading">Alert</h2>
+      This is an alert <a href="#" class="alert-link" data-dismiss="alert">Click me!</a>
+    </div>
+  <!-- Modal -->
+    <h2>Modal</h2>
+    <button class='btn btn-primary' type="button" data-toggle="modal" data-target="#modalExample">Show modal</button>
+    <div class="modal fade show" role="dialog" id='modalExample'>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">This is Modal</h5>
+            <button class="close" type="button" data-dismiss="modal">
+              <span aria-hidden="true"> &times; </span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus, facere!</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-muted" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button" data-dismiss="modal">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- form -->
+    <h2>Form</h2>
+    <div class="container">
+      <!-- novalidate prevent browser verified announcement -->
+      <form action="#" class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="fname">First Name:</label>
+              <input type="text" class="form-control is-invalid" name="fname">
+              <div class="invalid-feedback">Username is in valid!</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="lname">Last Name:</label>
+              <input type="text" class="form-control" name="lname">
+              <small class="text-muted">Input your Last Name</small>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <!-- use required for unit test -->
+          <!-- use class invalid-feedback for feedback -->
+          <input type="password" class="form-control" name="password" required>
+          <div class="invalid-feedback">Invalid Password</div>
+        </div>
+      
+        <div class="form-group">
+          <label for="chooseGender">Gender</label>
+          <select name="gender" id="chooseGender" class='form-control'>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="agree-term" required>
+            <label for="agree-term" class="form-check-label text-dark">Confirm &amp; Agree with Agreement Term
+            </label>
+            <div class="invalid-feedback">You must Agree the term</div>
+          </div>
+        </div>
+        
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- include bs, jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      const form = document.querySelector('.needs-validation');
+
+      form.addEventListener('submit', (e) => {
+        //use checkValidity to check whether submitted form have valid or not
+        if(!form.checkValidity()){
+          e.preventDefault();
+          e.stopPropagation();
+          
+        }
+        form.classList.add('was-validated');
+      }, false)
+    </script>
+  
+  </body>
+</html>
