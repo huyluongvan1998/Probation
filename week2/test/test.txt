@@ -1,0 +1,6 @@
+jack	male	vietnam 18	01
+jack	male	vietnam 20	02
+jack	male	vietnam 21	03
+jill	female	americano 18	04
+jill	female	americano 18	05
+jill	female	americano 18	06
