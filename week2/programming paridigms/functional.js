@@ -1,5 +1,12 @@
-const MyuserName = document.querySelector('#username');
-const Mypassword = document.querySelector('#password');
+
+//impure function
+//have to create a one un-pure function for display error
+const alertFunc = (error) => {
+    alert(error);
+} 
+// end impure func
+//-------------------------------------------------------------
+
 //try to avoid side-effects by creating pure function.
 
 class myUser {
@@ -16,14 +23,6 @@ class myUser {
 
 
 
-
-//have to create a one un-pure function for display error
-const alertFunc = (error) => {
-    alert(error);
-} 
-
-
-
 const getData = () => {
     const form = document.querySelector('.form-submit');
     form.addEventListener('submit', submitHandler);
@@ -32,6 +31,8 @@ const getData = () => {
 const submitHandler = (event) => {
 //use try-catch for handling errors.    
     try {
+        const MyuserName = document.querySelector('#username');
+        const Mypassword = document.querySelector('#password');
         event.preventDefault();
         username = MyuserName.value;
         password = Mypassword.value;
