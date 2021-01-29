@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>begin of Vue</title>
+</head>
+<body>
+    <div id='root'>
+        <!-- <h1>
+          {{greeting}}
+          <br>
+          Email: {{email}}
+          <br>
+          Email(V-1): <span v-once> {{email}} </span>
+          <br>
+          V-html: <span v-html='email'> {{email}} </span>
+        </h1>
+        <input v-model='email' :class="[email.length < 2 ? 'red' : 'green']" v-html='email'>
+        <button :disabled='email.length < 2' >
+          submit
+        </button>
+        <p v-if='1 === 0'>
+          this is if true
+        </p>
+        <p v-else-if='1 === 7'>
+          this is if true 1
+        </p>
+        <p v-else='1 === 1'>
+          this is if true 2
+        </p>
+        V show set the display to none if unsatisfied condition
+        <p v-show='false'>
+          this is v show
+        </p> -->
+        <h1> List of friends</h1>
+        <input v-model='newFriend' @keyup.enter='{addFriends()}'>
+        <button @click.stop.prevent='{addFriends()}' >
+          submit
+        </button>
+        <ul>
+          <li v-for='f in friends'>{{f.name | capitalize}}</li>
+        </ul>
+        <friend-list :friends='friends' />
+      
+      </div>
+      
+</body>
+</html>
